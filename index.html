@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>အားပုတု (Arrputu) - မြန်မာ့ရိုးရာလက်ရာများ</title>
+    <style>
+        body { background-color: #fffaf0; text-align: center; font-family: sans-serif; margin: 0; padding: 0; color: #333; }
+        .header { background-color: #d35400; color: white; padding: 25px; font-size: 26px; font-weight: bold; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .container { padding: 20px; max-width: 1200px; margin: auto; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; padding: 20px; }
+        .menu-item { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; transition: 0.3s; border: 1px solid #eee; }
+        .menu-item:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+        .menu-item img { width: 100%; height: 200px; object-fit: cover; background-color: #f9f9f9; }
+        .menu-item h4 { color: #2c3e50; margin: 15px 0 5px 0; font-size: 18px; padding: 0 10px; min-height: 45px; display: flex; align-items: center; justify-content: center; }
+        .price { color: #d35400; font-weight: bold; margin-bottom: 20px; font-size: 18px; border-top: 1px dashed #eee; pt: 10px; }
+        .footer { background-color: #2c3e50; color: white; padding: 40px 20px; margin-top: 50px; }
+        .footer h3 { color: #f1c40f; margin-bottom: 20px; }
+        .footer p { margin: 10px 0; font-size: 16px; }
+        .footer a { color: #3498db; text-decoration: none; font-weight: bold; }
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        .btn { padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.2s; }
+        .btn-phone { background-color: #27ae60; color: white; }
+        .btn-messenger { background-color: #0084ff; color: white; }
+        .btn-fb { background-color: #1877f2; color: white; }
+        .btn:hover { opacity: 0.9; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <div class="header">အားပုတု (Arrputu) - အိမ်ချက်လက်ရာစစ်စစ်</div>
+    
+    <div class="container">
+        <h2>မြန်မာ့ရိုးရာ ဟင်းလျာမီနူးများ</h2>
+        <div class="menu-grid" id="menu"></div>
+    </div>
+
+    <div class="footer">
+        <h3>📞 ဆက်သွယ်မှာယူရန်</h3>
+        <p>ဖုန်း/Viber: <strong>09969177508, 09448034236</strong></p>
+        <div class="btn-group">
+            <a href="tel:09969177508" class="btn btn-phone">📞 အခုပဲ ဖုန်းဆက်မည်</a>
+            <a href="https://m.me/rrputu" target="_blank" class="btn btn-messenger">💬 Messenger မှမှာမည်</a>
+            <a href="https://www.facebook.com/share/1B5MMQwv35/" target="_blank" class="btn btn-fb">🌐 Facebook Page</a>
+        </div>
+        <p style="margin-top: 30px; font-size: 12px; opacity: 0.7;">© 2026 Arrputu Burmese Food. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        const menuContainer = document.getElementById('menu');
+        
+        const dishes = [
+            { n: "၁။ ကြက်မွှကြော်", p: "12,000 ကျပ်" },
+            { n: "၂။ ဝက်မွှကြော်", p: "13,000 ကျပ်" },
+            { n: "၃။ အမဲမွှကြော်", p: "13,000 ကျပ်" },
+            { n: "၄။ ငါးကြည်းကြပ်တိုက်ကြော်", p: "15,000 ကျပ်" },
+            { n: "၅။ ဝက်တုံးဘာလချောင်", p: "12,500 ကျပ်" },
+            { n: "၆။ အမဲတုံးဘာလချောင်", p: "12,500 ကျပ်" },
+            { n: "၇။ ပုစွန်ခြောက်ဘာလချောင်", p: "7,500 ကျပ်" },
+            { n: "၈။ ပုစွန်ခြောက်ငံပြာရည်ကြော်", p: "7,000 ကျပ်" },
+            { n: "၉။ ငါးခြောက်ထောင်း(စပ်)", p: "8,500 ကျပ်" },
+            { n: "၁၀။ ငါးခြောက်ထောင်းအုန်းနို့", p: "8,500 ကျပ်" },
+            { n: "၁၁။ ငါးခြောက်တုံးကြော်", p: "8,500 ကျပ်" },
+            { n: "၁၂။ ငါးနီတူကြော်", p: "8,500 ကျပ်" },
+            { n: "၁၃။ အာဗြဲခြောက်ကြော်", p: "8,500 ကျပ်" },
+            { n: "၁၄။ ငါးလေးနှမ်းကပ်ကြော်", p: "8,500 ကျပ်" },
+            { n: "၁၅။ ငါးကြင်းဆီသတ်", p: "8,500 ကျပ်" },
+            { n: "၁၆။ ငါးဖယ်အောင်းငါးပိကောင်", p: "10,000 ကျပ်" },
+            { n: "၁၇။ ပုစွန်ချဉ်ပေါင်ကြော်", p: "6,500 ကျပ်" },
+            { n: "၁၈။ ဆတ်သားခြောက်ဖုတ်", p: "18,000 ကျပ်" },
+            { n: "၁၉။ ဓညင်းသီးငါးပိချက်", p: "9,000 ကျပ်" },
+            { n: "၂၀။ ငါးငပိစင်းကော", p: "7,500 ကျပ်" },
+            { n: "၂၁။ မန်ကျည်းသီးစိမ်းငပိကြော်", p: "6,000 ကျပ်" },
+            { n: "၂၂။ မရမ်းသီးစိမ်းငပိကြော်", p: "7,000 ကျပ်" },
+            { n: "၂၃။ အသားတုဘာလချောင်", p: "5,500 ကျပ်" },
+            { n: "၂၄။ ငါးပိထောင်း", p: "4,500 ကျပ်" }
+        ];
+
+        for (let i = 1; i <= 24; i++) {
+            const item = `
+                <div class="menu-item">
+                    <img src="images/hin${i}.jpg" alt="${dishes[i-1].n}" onerror="this.src='https://via.placeholder.com/250?text=Arrputu+Food'">
+                    <h4>${dishes[i-1].n}</h4>
+                    <div class="price">${dishes[i-1].p}</div>
+                </div>
+            `;
+            menuContainer.innerHTML += item;
+        }
+    </script>
+</body>
+</html>
